@@ -12,13 +12,13 @@ class StockPicking(models.AbstractModel):
         bold = workbook.add_format({'bold': True})
         titles = ['Fecha de Recepción', 'Responsable de Recepción', 'Proveedor', 'Producto', 'Marca', 'Nº de Remito', 'Cantidad', 'Fecha de Vencimiento', 'Lote']
 
-        row = 2
+        row = 1
         index = 0
 
-        for rec in pickings:
-            for i,title in enumerate(titles):
-                sheet.write(1, i, title, bold)
+        for i,title in enumerate(titles):
+            sheet.write(0, i, title, bold)
 
+        for rec in pickings:
             for product in rec.move_ids_without_package:
                for i,lot in enumerate(product.move_line_nosuggest_ids):
                    sheet.write(row + index, 0, '') # Fecha de Recepcion
@@ -32,4 +32,6 @@ class StockPicking(models.AbstractModel):
                    sheet.write(row + index, 6, lot.qty_done) # Cantidad
                    sheet.write(row + index, 7, '') # Fecha de Vencimiento
                    sheet.write(row + index, 8, lot.lot_name) # Lote
+
+                   index = index + 1
 
