@@ -10,10 +10,9 @@ _logger = logging.getLogger(__name__)
 #desarrollo de clase para poder visualizar archivo excel
 class Stock_picking_inherit_qc(http.Controller):
     @http.route([
-        '/account/account_extra_sales_report/<model("ar.extra.sales.tax.report"):wizard>',
+        '/account/account_extra_sales_report/<model("stock.picking"):wizard>',
     ], type='http', auth="user", csrf=False)
     def get_quality_control_excel_report(self,wizard=None,**args):
-         
         response = request.make_response(
                     None,
                     headers=[

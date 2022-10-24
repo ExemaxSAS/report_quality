@@ -1,17 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
-    <record id="view_stock_inherit_qc_template_form" model="ir.ui.view">
+    <!--record id="view_stock_inherit_qc_template_form" model="ir.ui.view">
         <field name="name">stock.view.picking.form.qc</field>
-        <field name="model">stock.picking.inherit.qc</field>
+        <field name="model">stock.picking</field>
         <field name="inherit_id" ref="stock.view_picking_form"/>
         <field name="arch" type="xml">
            <header>
-                <button string="Control de Calidad" type="object" />
-            </header>   
-             
-        
-             
+                <button string="Control de Calidad" type="object" name="print_report_xml" />
+            </header>                
         </field>
-    </record>
+    </record-->
+
+    <report
+		  id="stock_picking_quality"
+		  model="stock.picking"
+		  string="Reporte Calidad (XLSX)"
+		  report_type="xlsx"
+		  name="report_quality.stock_picking_quality"
+		  file="stock_picking_quality"
+		  attachment_use="False"
+		 />
 </odoo>
 

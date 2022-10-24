@@ -5,6 +5,7 @@
     'version': '14.0',
     'depends': [
         'stock',
+        'report_xlsx'
     ],
     'author': 'Mauro Bogado, Exemax',
     'website': 'www.exemax.com.ar',
@@ -15,6 +16,5 @@
     ''',
     'data': [
         'views/stock_picking_inherit_qc.xml',
-       
     ],
 }
