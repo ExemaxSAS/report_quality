@@ -5,7 +5,8 @@
     'version': '14.0',
     'depends': [
         'stock',
-        'report_xlsx'
+        'report_xlsx',
+        'product_brand'
     ],
     'author': 'Mauro Bogado, Exemax',
     'website': 'www.exemax.com.ar',
